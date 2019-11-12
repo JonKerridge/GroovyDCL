@@ -1,0 +1,35 @@
+The system comprises three processes running on different IP addresses.
+
+For the purpose of demonstration they are running on the loop-back network 127.0.0.?
+
+The processes MUST be run in the following order:
+
+RunPO2
+RunPO1
+RunSender
+
+The system produces an unexpected error message:
+org.codehaus.groovy.tools.RootLoader cannot be cast to jcsp.net2.mobile.DynamicClassLoader
+
+This is generated deep inside the parallel jcsp library being used.
+
+If the Processes are run as a collection of three parallel processes,
+not distributed over a number of nodes using
+RunSingleMachine
+output is generated, albeit jumbled up, that is as expected.
+
+The Java version used  is AdoptOpenJDK\jdk-8.0.232.09-hotspot
+The Groovy version is org.codehaus.groovy:groovy-all:2.3.11
+
+Up until mid-2018 I had been using Eclipse, using the latest version,
+plus the corresponding Groovy Eclipse plugin.
+This was generated using Java 1.8 and Groovy 2.4 plugin from springsource
+
+In mid 2018 I moved to Intellij, later versions of Groovy and Gradle builds.
+
+It was only in May 2019 did I discover that this error was being generated.
+
+I am now trying to generate version of the libraries that are Java8 and Java9+ compatible.
+
+I now realise that there is something more fundamental that I need to sort out
+before moving on to te redevelopment for java9+
