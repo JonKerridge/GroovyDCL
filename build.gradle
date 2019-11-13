@@ -7,6 +7,7 @@ group 'GroovyDCL'
 version '1.0.0'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -14,10 +15,13 @@ repositories {
     maven {
         url "https://dl.bintray.com/jonkerridge/jcsp"
     }
+    maven {
+        url "https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all"
+    }
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile 'org.codehaus.groovy:groovy-all:2.5.8'
     compile 'cspforjava:jcsp:1.1.0'
     compile 'groovyJCSP:groovyJCSP:1.1.3'
 }
